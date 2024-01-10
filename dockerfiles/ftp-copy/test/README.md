@@ -19,10 +19,11 @@ SOURCE_URL=ftp://ftp.ncbi.nlm.nih.gov/mwa/tar1302106648 TARGET_URL=/tmp/file FIL
 ```
 ## 3. local to ftp-server
 
-bug:73:cmd_mkdir_remote="lftp -c \"open ${ftp_url}; mkdir -p ${remote_dir}\" 2> /work/mkdir-stderr.txt"
-73:cmd_mkdir_remote="lftp -c \'open ${ftp_url}; mkdir -p ${remote_dir}\' 2> /work/mkdir-stderr.txt"
+
 
 ```sh
+bug:73:cmd_mkdir_remote="lftp -c \"open ${ftp_url}; mkdir -p ${remote_dir}\" 2> /work/mkdir-stderr.txt"
+73:cmd_mkdir_remote="lftp -c \'open ${ftp_url}; mkdir -p ${remote_dir}\' 2> /work/mkdir-stderr.txt"
 
 message:/tmp/file~1302106648_1302111372_ics.dat.zst~ftp://ftp.ncbi.nlm.nih.gov/tang
 FILE_NAME=ftp://ftp.ncbi.nlm.nih.gov/mwa/tar1302106648~1302106648_1302111372_ics.dat.zst~/tmp/file~/tmp ACTION=PUSH ENABLE_RECHECK_PUSH=yes scalebox app create
