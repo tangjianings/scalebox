@@ -70,7 +70,7 @@ printf "[DEBUG]ftp_ur=%s remote_dir=%s, local_dir=%s, work_dir=%s, filename=%s \
 # 多空格分隔
 cmd_remote_filesize="lftp -c \"open ${ftp_url}; ls ${remote_dir}|grep ${filename}\"|awk -F'  *' '{print \$5}'"
 cmd_local_filesize="stat --printf=\"%s\" ${work_dir}/${filename}"
-cmd_mkdir_remote="lftp -c \"open ${ftp_url}; mkdir -p ${remote_dir}\" 2> /work/mkdir-stderr.txt"
+cmd_mkdir_remote="lftp -c \'open ${ftp_url}; mkdir -p ${remote_dir}\' 2> /work/mkdir-stderr.txt"
 cmd_rm_local_file="rm -f ${local_dir}/${filename} /work/${filename}"
 cmd_put_file="lftp -c \"open ${ftp_url}; cd ${remote_dir}; lcd ${work_dir}; put ${filename}\""
 cmd_get_file="lftp -e \"lcd ${work_dir};pget -n $NUM_PGET_CONN ${ftp_url}${remote_dir}/${filename};exit\""
